@@ -1,0 +1,12 @@
+# Data and secrets
+data/
+.env
+
+# Python
+__pycache__/
+*.pyc
+
+# Outputs
+*.log
+*.bin
+*.csv

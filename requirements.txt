@@ -1,0 +1,8 @@
+pathway
+numpy
+pandas
+tqdm
+sentence-transformers
+spacy
+nltk
+
