@@ -1,5 +1,5 @@
 # Data and secrets
-data/
+# data/
 .env
 
 # Python
@@ -9,4 +9,4 @@ __pycache__/
 # Outputs
 *.log
 *.bin
-*.csv
+#*.csv
