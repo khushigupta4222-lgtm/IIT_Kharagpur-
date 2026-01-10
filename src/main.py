@@ -1,30 +1,23 @@
 print(">>> main.py file loaded")
-import pathway as pw
-
 import sys
 from pathlib import Path
+
+
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
+from src.ingestion.load_data import load_example
 from src.chunking.chunker import chunk_text
+
 
 def main():
     print(">>> MAIN.PY IS RUNNING <<<")
 
-    # Pathway ingestion
+
     example_dir = PROJECT_ROOT / "data" / "example_001"
 
-    # Create Pathway Dataset
-    ds = pw.dataset(example_dir)
-
-    # Convert to list
-    novel = list(ds['novel'])
-    backstory = list(ds['backstory'])
-
-    # If your dataset only has one example, grab the first element
-    novel = novel[0] if novel else ""
-    backstory = backstory[0] if backstory else ""
+    novel, backstory = load_example(str(example_dir))
 
     print("Novel loaded successfully.")
     print("Novel length:", len(novel))
