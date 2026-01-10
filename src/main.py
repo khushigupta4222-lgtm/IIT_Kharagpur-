@@ -1,5 +1,8 @@
+print(">>> main.py file loaded")
 import sys
 from pathlib import Path
+
+
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
@@ -9,6 +12,9 @@ from src.chunking.chunker import chunk_text
 
 
 def main():
+    print(">>> MAIN.PY IS RUNNING <<<")
+
+
     example_dir = PROJECT_ROOT / "data" / "example_001"
 
     novel, backstory = load_example(str(example_dir))
@@ -28,5 +34,5 @@ def main():
     print("\nBaseline prediction:", prediction)
 
 
-if __name__ == "_main_":
+if __name__ == "__main__":
     main()
