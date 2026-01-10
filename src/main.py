@@ -1,23 +1,21 @@
 print(">>> main.py file loaded")
+
 import sys
 from pathlib import Path
-
-
 
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 sys.path.append(str(PROJECT_ROOT))
 
-from src.ingestion.load_data import load_example
+from src.ingestion.pathway_ingest import ingest_example
 from src.chunking.chunker import chunk_text
 
 
 def main():
     print(">>> MAIN.PY IS RUNNING <<<")
 
-
     example_dir = PROJECT_ROOT / "data" / "example_001"
 
-    novel, backstory = load_example(str(example_dir))
+    novel, backstory = ingest_example(str(example_dir))
 
     print("Novel loaded successfully.")
     print("Novel length:", len(novel))
@@ -36,3 +34,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
